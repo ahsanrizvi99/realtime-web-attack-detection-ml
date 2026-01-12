@@ -1,0 +1,33 @@
+{
+  "model_file": "xgboost_sqli_xss_detector.joblib",
+  "xai_system_file": "xai_system.pkl",
+  "shap_explainer_file": "shap_explainer.pkl",
+  "features": [
+    "Flow Duration",
+    "Bwd Packet Length Max",
+    "Flow Bytes/s",
+    "Subflow Fwd Bytes",
+    "Fwd Header Length",
+    "Active Min"
+  ],
+  "feature_descriptions": {
+    "Flow Duration": "Duration of network flow (microseconds)",
+    "Fwd Header Length": "Forward packet header length (bytes)",
+    "Bwd Packet Length Max": "Maximum backward packet size (bytes)",
+    "Subflow Fwd Bytes": "Forward bytes in subflow",
+    "Flow Bytes/s": "Flow rate (bytes per second)",
+    "Active Min": "Minimum active time (microseconds)"
+  },
+  "deployment_instructions": {
+    "required_libraries": [
+      "numpy",
+      "pandas",
+      "xgboost",
+      "shap",
+      "scikit-learn",
+      "flask"
+    ],
+    "loading_code": "\n# Loading code for your web application:\nimport joblib\nimport pickle\nimport numpy as np\n\n# Load model\nmodel = joblib.load('xgboost_sqli_xss_detector.joblib')\n\n# Load XAI system\nwith open('xai_system.pkl', 'rb') as f:\n    xai_system = pickle.load(f)\n\n# Now you can use: result = xai_system.predict_with_explanation(features)\n        ",
+    "api_usage": "\n# API Usage example:\nPOST /predict\n{\n    \"flow_duration\": 5000000,\n    \"fwd_header_length\": 45,\n    \"bwd_packet_length_max\": 1200,\n    \"subflow_fwd_bytes\": 2500,\n    \"flow_bytes_s\": 15000,\n    \"active_min\": 500000\n}\n\nResponse:\n{\n    \"status\": \"success\",\n    \"result\": {\n        \"prediction\": 0,\n        \"prediction_label\": \"Benign\",\n        \"confidence_percentage\": \"94.5%\",\n        \"risk_level\": \"VERY_LOW\",\n        \"explanation\": {\n            \"summary\": \"\u2705 BENIGN TRAFFIC (Confidence: 94.5%) ...\",\n            \"top_contributing_factors\": [...]\n        }\n    }\n}\n        "
+  }
+}
