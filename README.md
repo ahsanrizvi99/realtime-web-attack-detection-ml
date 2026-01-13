@@ -8,7 +8,7 @@
 ![SHAP](https://img.shields.io/badge/Explainable%20AI-SHAP-orange)
 ![Status](https://img.shields.io/badge/Project-Academic-success)
 
-[![Read the Paper](https://img.shields.io/badge/Read-Full_Paper-red?logo=adobe-acrobat-reader&logoColor=white)](Project_Report.pdf)
+[![View Project Report](https://img.shields.io/badge/View-Project_Report-blue?logo=adobe-acrobat-reader&logoColor=white)](Project_Report.pdf)
 
 ---
 
