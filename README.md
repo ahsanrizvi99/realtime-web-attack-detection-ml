@@ -6,7 +6,7 @@
 ![XGBoost](https://img.shields.io/badge/XGBoost-ML-red?logo=xgboost&logoColor=white)
 ![Network](https://img.shields.io/badge/Network-PCAP_Analysis-success)
 ![SHAP](https://img.shields.io/badge/Explainable%20AI-SHAP-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Project-Academic-success)
 
 [![Read the Paper](https://img.shields.io/badge/Read-Full_Paper-red?logo=adobe-acrobat-reader&logoColor=white)](Project_Report.pdf)
 
