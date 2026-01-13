@@ -178,6 +178,7 @@ This notebook performs:
 │   └── Model_Training.ipynb
 │
 ├── assets/                     # Figures and diagrams
+├── Project_Report.pdf        
 ├── requirements.txt
 └── README.md
 ```
